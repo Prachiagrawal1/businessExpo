@@ -26,7 +26,7 @@
                     <a class="navbar-brand" href="/"><img alt='BusinessExpo' src='/images/logo.png'></a>
               </div>
                 <div class="collapse navbar-collapse" id="bs">
-                    <ul class='nav-mobile'>
+                    <ul class='nav-mobile nav navbar-nav'>
                         <li><a href='/' class='btn-small'>Home</a></li>
                         <li><a href='/'><i class="fa fa-search"></i>Search</a></li>
                         <li><a href='/'>About Us</a></li>
@@ -36,7 +36,7 @@
                             <li><a class='btn-small auth' href="/login">Login</a></li>
                             <li><a class='btn-small auth' href="/signin">Sign Up</a></li>
                         <% }else{ %>
-                            <li><a class='auth auth-user'><%= currentUser.username %></a></li>
+                            <li><a class='auth-user'>Signed In as : <%= currentUser.username %></a></li>
                             <li><a class='btn-small auth' href="/logout">LogOut</a></li>
                         <% }; %>
                         

@@ -9,18 +9,19 @@
 
 .nav-mobile{
     display: inline;
-    padding-top:15px;   
+    padding-top:17px;  
+    margin-left: 50px; 
 }
 .nav-mobile li{
     display: block;
     display: inline;
-    padding : 10px;
-    margin-top: 10px;
+    /* padding : 10px; */
+    /* margin-top: 10px; */
 }
 .nav-mobile li a{
     color: rgb(48, 48, 48);
     cursor: pointer;
-    font-size: 14.0833px;
+    font-size: 15px;
 }
 #login-hr{
     height: 1px;
@@ -65,11 +66,20 @@
     font-weight: bold;
 }
 .auth-user{
-    background-color: rgb(240, 240, 240);
-    width: 100px;
+    margin-top:15px;
+    color: rgb(48, 48, 48);
+    /* background-color: rgb(240, 240, 240); */
+    border: 1px solid rgb(48, 48, 48);
+    /* background-color: aliceblue ; */
+    border-radius: 5px;
     font-weight: 100;
+    font-size: 14.0833px;
+    font-family: "Muli", sans-serif;
     /* color: whitesmoke */
     /* padding-left: 30px; */
+}
+.auth-user a{
+    width: 180px;
 }
 
 .navbar{
