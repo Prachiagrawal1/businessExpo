@@ -1,27 +1,92 @@
 <% include ./partials/header %>
-
-<div class='main-section'>
-    <div>
-        <div class='show-logo'>
+<div class='grey'>
+<div class=' job-main-section container'>
+    
+    <div class='job-header white'>
+        <h4><%= data.name %> Job Opportunity In <%= data.providerCountry %></h4>
+    </div>
+    <div class='white row'>
+        <div class='show-logo col col-md-6'>
             <img src=<%= data.logo %>>
         </div>
-        <div class='side-details'>
-            <li><%= data.name %></li>
-            <li><%= data.providerCountry %></li>
-            <li><%= data.contact.website %></li>
-            <li><%= data.contact.emailAddress %></li>
-            <li><%= data.contact.phone %></li>
+        <div class='side-details col col-md-6'>
+            <ul>
+                <li><b><%= data.name %></b></li>
+                <li><%= data.providerCountry %></li>
+                <li><%= data.contact.website %></li>
+                <li><%= data.contact.emailAddress %></li>
+                <li><%= data.contact.phone %></li>
+            </ul>
         </div>
-        <div class='aboutUs'>
+        <div class='about-us col col-md-12'>
             <p><%= data.aboutUs %></p>
         </div>
-        <div>
-            <div class='map' id='map'></div>
-            <div class='contactUs'>
-
+    </div>
+        <div class='white container map-contact black'>
+            <div class='row '>
+                <div class='map col col-md-6' id='map' style="height: 404px; width:500px"></div>
+                <div class='contactUs col col-md-6'>
+                    <form id='form2'>
+                        <div class="form-group">
+                            <label id = 'name' style="font-size:20px;font-weight:100; font-family: 'Muli', sans-serif ;">  Name : </label>
+                            <input class="contact-box" id='name' type="text" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label id = 'mail' style="font-size:20px;font-weight:100; font-family: 'Muli', sans-serif ;">Email : </label>
+                            <input class="contact-box" id='mail' type="email" name="mail" placeholder="abc@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label id = 'number' style="font-size:20px;font-weight:100; font-family: 'Muli', sans-serif ;">Contact No : </label>
+                            <input class="contact-box" id='number' type="text" name="number" placeholder="+91-81054******">
+                        </div>
+                        <div class="form-group">
+                                <label id = 'message' style="font-size:20px;font-weight:100; font-family: 'Muli', sans-serif ; vertical-align: top">Message : </label>
+                                <br><textarea id='message' class='contact-box' name="mesage" cols="50" rows="3"></textarea>
+                        </div>
+                        <div class="form-group send-button " style="border-radius: 8px;">
+                            <button class="btn btn-lg send-button btn-block" >SEND MESSAGE</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    
 </div>
-<script></script>
+</div>
+
+<!-- <script src='https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=uk&inputtype=textquery&fields=geometry&key=AIzaSyBB53G9wpqGpUug297wdahoFd5QIqi9zHo'></script> -->
+<script>
+    function myMap(count) {
+        var lat;
+        var lng;
+        var data;
+        const Http = new XMLHttpRequest();
+        const url='https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=india&inputtype=textquery&fields=geometry&key=AIzaSyBB53G9wpqGpUug297wdahoFd5QIqi9zHo';
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange=(e)=>{
+            console.log(Http.responseText);
+            data = JSON.parse(Http.responseText);
+            console.log(data);
+            lat = data.candidates[0].geometry.location.lat;
+            lng = data.candidates[0].geometry.location.lng;
+            var mapProp= {
+                center:new google.maps.LatLng(lat ,lng ),
+                zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("map"),mapProp);
+            var marker = new google.maps.Marker({
+                position: mapProp.center,
+                animation:google.maps.Animation.BOUNCE
+            });
+
+            // marker.setMap(map);
+        };
+        // console.log(data);
+        
+    }
+</script>
+                    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB53G9wpqGpUug297wdahoFd5QIqi9zHo&callback=myMap"></script>
+
 <% include ./partials/footer %>

@@ -9,9 +9,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheet/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+        
+                
     </head>
     <body>
-        <nav class="navbar ">
+        <nav class="navbar sticky-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs" aria-expanded="false">
@@ -23,12 +26,17 @@
                     <a class="navbar-brand" href="/"><img alt='BusinessExpo' src='/images/logo.png'></a>
               </div>
                 <div class="collapse navbar-collapse" id="bs">
+                    <ul class='nav-mobile'>
+                        <li><a href='/' class='btn-small'>Home</a></li>
+                        <li><a href='/'><i class="fa fa-search"></i>Search</a></li>
+                        <li><a href='/'>About Us</a></li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <% if(!currentUser){ %>
                             <li><a class='btn-small auth' href="/login">Login</a></li>
                             <li><a class='btn-small auth' href="/signin">Sign Up</a></li>
                         <% }else{ %>
-                            <li><a class='auth auth-user'><img id='flag-id' src=<%=currentUser.flagUrl %> alt='flag'><%= currentUser.username %></a></li>
+                            <li><a class='auth auth-user'><%= currentUser.username %></a></li>
                             <li><a class='btn-small auth' href="/logout">LogOut</a></li>
                         <% }; %>
                         

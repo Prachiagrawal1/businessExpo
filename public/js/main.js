@@ -40,7 +40,11 @@ $('#germany').click(function(){
     $('#country').val('germany');
     $('#form1').submit( );
 });
+$('.send-button').click(function(){
+    $('#form2').submit();
+});
 function initMap() {
+
     var uluru = {lat: -25.344, lng: 131.036};
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 4, center: uluru});

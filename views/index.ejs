@@ -4,9 +4,9 @@
             <div class="country-options">
                 <form method="GET" action="/" id='form1'>
                     <!-- <label for="search">Search</label> -->
-                    <div>
-                        <img alt='marker' src='https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/location-71f31ec08c06cf6736a1d12d6381dfc5786c237acdb690006334bd670e011904.png'>
-                        <span>
+                    <div class='select-country'>
+                            <img alt='marker' src='https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/location-71f31ec08c06cf6736a1d12d6381dfc5786c237acdb690006334bd670e011904.png'>
+                        <span id='select'>
                             <select id='country' name='country'>
                                 <option value="all" id='all' >All opportinity</option> 
                                 <option value="india"  id='india'>India</option>
@@ -16,25 +16,25 @@
                                 <option value="uk"  id='uk'>United Kingdom</option>
                             </select> 
                         </span>
-                        <img src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/arrow-down-f6c79d7b7d83210d5cd38304f4999cbf1d108524703c2585f21ecf7d8cf00ea0.png" alt="down-arrow">
+                        <img  src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/arrow-down-f6c79d7b7d83210d5cd38304f4999cbf1d108524703c2585f21ecf7d8cf00ea0.png" alt="down-arrow">
                         <!-- <input type="submit"> -->
                     </div>
                 </form>
             </div>
         </div>
-        <hr>
+        <!-- <hr> -->
         <div class='jobs'>
             <div class="row job-container ">
                 <% data.forEach(function(job){ %>
                     <% job.recieverCountry.forEach(function(matched){ %>
                         <% if(currentUser.country == matched){ %>
                             <div class="col col-md-4 data-container">
-                                <a href='/show/<%= job._id %>'>
-                                    <div class='job-logo '>
-                                        <img alt = <%=job.name%> src= <%= job.logo %> >
-                                    </div>
-                                    <div class="job caption">
-                                        <h4><%= job.name %></h4>
+                                <a href='/<%= job.providerCountry %>/<%= job._id %>'>
+                                    
+                                    <img class='job-logo' alt = <%=job.name%> src= <%= job.logo %> >
+                        
+                                    <div class="job-info caption">
+                                        <div class='job-name'><h4><%= job.name %></h4></div>
                                     </div>
                                 </a>
                             </div>            

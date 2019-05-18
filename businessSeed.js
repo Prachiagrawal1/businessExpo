@@ -4,7 +4,7 @@ var Business= require("./models/business");
 
 var data = [
         {
-           logo: 'https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066__340.png',
+           logo: 'https://cdn.pixabay.com/photo/2014/04/02/10/16/fire-303309__340.png',
            name:  'Ignitor',
            providerCountry: 'india',
            recieverCountry: ['germany', 'denmark'],
@@ -56,7 +56,7 @@ var data = [
             }
          },
          {
-            logo: 'https://cdn.pixabay.com/photo/2017/03/19/20/19/ball-2157465__340.png',
+            logo: 'https://cdn.pixabay.com/photo/2012/11/26/15/07/earth-67359__340.jpg',
             name:  'Oberlo',
             providerCountry: 'sweden',
             recieverCountry: ['india', 'uk', 'germany','denmark'],
@@ -121,7 +121,7 @@ var data = [
             }
          },
          {
-            logo: 'https://cdn.pixabay.com/photo/2016/09/14/20/50/teeth-1670434__340.png',
+            logo: 'https://cdn.pixabay.com/photo/2018/09/24/11/12/graphic-3699669__340.png',
             name:  'Tooth Teeth',
             providerCountry: 'uk',
             recieverCountry: ['india','denmark','germany','sweden'],

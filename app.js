@@ -22,7 +22,7 @@ seedDB();
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public/"));
 
 //passport and session confguration
 app.use(require("express-session")({
@@ -52,7 +52,6 @@ function flagRequest (userCountry){
 
  app.use(function(req, res, next){
     res.locals.currentUser = req.user;
-    // res.locals.flag = flagRequest(req.user.country);
     next();
  });
 
@@ -114,7 +113,7 @@ app.get('/', isLoggedIn ,(req, res) => {
         }
     });
 });
-app.get('/show/:id', (req, res) => {
+app.get('/:country/:id', isLoggedIn ,(req, res) => {
     Business.findById({'_id' : req.params.id}, (err,data) =>{
         res.render('job.ejs', {data : data});
     })
