@@ -15,6 +15,7 @@ var Business = require('./models/business');
 var seedDB = require("./businessSeed");
 
 // mongoose.connect("mongodb://localhost:27017/businessExpo",{ useNewUrlParser: true});
+// mongodb://<dbuser>:<dbpassword>@ds351455.mlab.com:51455/businessexpo
 var mongoDB = 'mongodb://kriti09:rachana123@ds351455.mlab.com:51455/businessexpo';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
@@ -132,6 +133,6 @@ function isLoggedIn (req, res, next) {
   };
 }
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("Server Is Listening to PORT: 3000");
 });
