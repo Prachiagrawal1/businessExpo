@@ -1,0 +1,98 @@
+/* body{
+    background-color: rgb(95, 95, 95);
+} */
+.jobs{
+    margin: 0 auto;
+    /* background-color:rgb(220, 220, 220); */
+    height: 500 px;
+}
+#login-hr{
+    height: 1px;
+    color: rgb(254, 210, 80);
+    
+}
+.auth-container {
+    height: 100%;
+    margin:auto; 
+    margin-top: 50px;
+    width:35%;
+    padding:40px;
+    box-shadow: 5px 5px 10px #888888;
+    /* background-color: rgb(95, 95, 95); */
+}
+.auth-button{
+    background-color: rgb(254, 210, 80);
+    /* color: rgb(254, 210, 80); */
+    font-weight: 900px;
+}
+.auth-new-user{
+    color: rgb(48, 48, 48); 
+    padding:20px;
+    text-align: center;
+}
+.auth-box{
+    border:none;
+    padding:10px;
+    width:95%;
+    border-bottom: 1px solid rgb(95, 95, 95);
+}
+.auth {
+    background-color: rgb(254, 210, 80);
+    border-bottom-color: rgb(48, 48, 48);
+    border-radius: 3.83333px;
+    font-family: "Muli", sans-serif;
+    font-size: 14.0833px;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:15px;
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+}
+.auth-user{
+    background-color: rgb(240, 240, 240);
+    width: 100px;
+    font-weight: 100;
+    /* color: whitesmoke */
+    /* padding-left: 30px; */
+}
+
+.navbar{
+    height: 85px;
+    /* margin-bottom: 20px; */
+    box-shadow: 5px 5px 10px #888888;
+
+}
+.navbar-brand img{
+    height: 80px;
+    margin:0;
+    padding-left:15px;
+}
+.navbar-brand{
+    margin:0;
+    padding:0;
+}
+.main-section{
+    margin: 0 auto;
+    width: 70%;
+}
+.country-input{
+    padding: 20px;
+}
+.main-section{
+    border: 2px solid;
+    padding-top: 20px;
+}
+.job{
+    /* padding: 50px; */
+}
+.job-logo img{
+    height: 150px;
+    width: 150px;
+}
+.data-container{
+    margin: 0 auto;
+    /* box-shadow : 1px 1px 1px 1px  #aaaaaa; */
+}
+#country{
+    border: none;
+}

@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+<div class='main-section'>
+    <div>
+        <div class='show-logo'>
+            <img src=<%= data.logo %>>
+        </div>
+        <div class='side-details'>
+            <li><%= data.name %></li>
+            <li><%= data.providerCountry %></li>
+            <li><%= data.contact.website %></li>
+            <li><%= data.contact.emailAddress %></li>
+            <li><%= data.contact.phone %></li>
+        </div>
+        <div class='aboutUs'>
+            <p><%= data.aboutUs %></p>
+        </div>
+        <div>
+            <div class='map' id='map'></div>
+            <div class='contactUs'>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script></script>
+<% include ./partials/footer %>

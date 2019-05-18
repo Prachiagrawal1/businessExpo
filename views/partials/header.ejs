@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BusinessExpo</title>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs" aria-expanded="false">
+			            <span class="sr-only">Toggle navigation</span>
+        			    <span class="icon-bar"></span>
+        			    <span class="icon-bar"></span>
+        			    <span class="icon-bar"></span>
+	        		</button>
+                    <a class="navbar-brand" href="/"><img alt='BusinessExpo' src='/images/logo.png'></a>
+              </div>
+                <div class="collapse navbar-collapse" id="bs">
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if(!currentUser){ %>
+                            <li><a class='btn-small auth' href="/login">Login</a></li>
+                            <li><a class='btn-small auth' href="/signin">Sign Up</a></li>
+                        <% }else{ %>
+                            <li><a class='auth auth-user'><img id='flag-id' src=<%=currentUser.flagUrl %> alt='flag'><%= currentUser.username %></a></li>
+                            <li><a class='btn-small auth' href="/logout">LogOut</a></li>
+                        <% }; %>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        

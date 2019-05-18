@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+
+<div class="container" style="font-family: 'Muli', 'sans-serif' ">
+<div class='auth-container' >
+    <div >
+        <h1 style="text-align: center; font-weight: bold">LOGIN</h1>
+    </div>
+    <div style="border-top: 2px solid rgb(254, 210, 80); padding-top:50px">
+            <!-- <hr id='login-hr'> -->
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <input class="auth-box" type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="auth-box" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group auth-button">
+                <button class="btn btn-lg  auth-button btn-block">Login</button>
+            </div>
+        </form>
+        <a href="/register" class='auth-new-user'>New User? Create an account</a>
+    </div>
+</div>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+<div class="container" style="font-family: 'Muli', 'sans-serif' ">
+<div class='auth-container'>
+    <div >
+        <h1 style="text-align: center; font-weight: bold">SIGNUP</h1>
+    </div>
+    <div style="border-top: 2px solid rgb(254, 210, 80); padding-top:40px">
+        <form action="/signin" method="POST">
+            <div class="form-group">
+                <input class="auth-box" type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="auth-box" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                    <input class="auth-box" type="text" name="name" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+                    <input class="auth-box" type="email" name="emailAddress" placeholder="abc@gmail.com">
+            </div>
+            <div class="form-group">
+                    <select class="auth-box" name='country'>
+                        <option value='india'>INDIA</option>
+                        <option value='germany'>GERMANY</option>
+                        <option value='sweden'>SWEDEN</option>
+                        <option value='uk'>UNITED KINGDOM</option>
+                        <option value='denmark'>DENMARK</option>
+                    </select>
+            </div>
+            
+            <div class="form-group auth-button">
+                <button class="btn btn-lg auth-button btn-block">SIGNUP</button>
+            </div>
+        </form>
+        <a class='auth-new-user' href="/register">New User? Create an account</a>
+    </div>
+</div>
+</div>
+<% include ./partials/footer %>
