@@ -14,7 +14,12 @@ var User = require('./models/users');
 var Business = require('./models/business');
 var seedDB = require("./businessSeed");
 
-mongoose.connect("mongodb://localhost:27017/businessExpo",{ useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/businessExpo",{ useNewUrlParser: true});
+var mongoDB = 'mongodb://kriti09:rachana123@ds351455.mlab.com:51455/businessexpo';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //seed the database
 seedDB();
